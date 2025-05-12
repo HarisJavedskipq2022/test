@@ -98,9 +98,9 @@ graph LR
     end
 
     subgraph "API Routes"
-        AR[/api/register]
-        AL[/api/login]
-        AU[/api/user]
+        AR["/api/register"]
+        AL["/api/login"]
+        AU["/api/user"]
     end
 
     subgraph "Services"
