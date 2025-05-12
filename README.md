@@ -1,24 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# QR Code Login App
 
-## Getting Started
+A full-stack application featuring user authentication, QR code generation, and AI-powered messaging using Next.js, PostgreSQL, and Google Gemini.
 
-First, run the development server:
+## Features
 
+- User registration and authentication
+- QR code generation for each user
+- AI-generated personalized messages
+- Responsive design
+- Docker-based PostgreSQL database
+
+## Prerequisites
+
+- Node.js 18 or later
+- Docker and Docker Compose
+- Google Gemini API key
+
+## Setup
+
+1. Clone the repository and install dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Copy the environment variables template:
+```bash
+cp .env.example .env
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Update the `.env` file with your credentials:
+- Generate a secure NEXTAUTH_SECRET (you can use `openssl rand -base64 32`)
+- Add your Google Gemini API key
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Start the PostgreSQL database:
+```bash
+docker-compose up -d
+```
+
+5. Run database migrations:
+```bash
+npx prisma migrate dev
+```
+
+6. Start the development server:
+```bash
+npm run dev
+```
+
+The application will be available at http://localhost:3000
+
+## Database Management
+
+- Start the database:
+```bash
+docker-compose up -d
+```
+
+- Stop the database:
+```bash
+docker-compose down
+```
+
+- View database logs:
+```bash
+docker-compose logs postgres
+```
+
+## Development
+
+- Run Prisma Studio (database GUI):
+```bash
+npx prisma studio
+```
+
+- Generate Prisma Client after schema changes:
+```bash
+npx prisma generate
+```
+
+## Project Structure
+
+- `/app` - Next.js app router pages and API routes
+- `/components` - React components
+- `/lib` - Utility functions and configurations
+- `/prisma` - Database schema and migrations
 
 ## Learn More
 
