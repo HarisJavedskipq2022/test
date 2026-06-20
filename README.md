@@ -1,6 +1,6 @@
 # QR Code Login App
 
-A full-stack application featuring user authentication, QR code generation, and AI-powered messaging using Next.js, PostgreSQL, and Google Gemini. papi
+A full-stack application featuring user authentication, QR code generation, and AI-powered messaging using Next.js, PostgreSQL, and Google Gemini. 
 
 ## Features
 
